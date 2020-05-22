@@ -23,7 +23,7 @@ class  BlogItem  extends Component{
     onEditSubmit(event){
         event.preventDefault();
 
-        this.props.onEditSubmit(this.nameInput.value, this.authorNameInput, this.contentInput.value, this.props.name);
+        this.props.onEditSubmit(this.nameInput.value, this.authorNameInput.value, this.contentInput.value, this.props.name);
 
         this.setState({isEdit: false});
     }
@@ -43,12 +43,16 @@ class  BlogItem  extends Component{
             <div>
                 {
                     this.state.isEdit ?
-                        (<form onSubmit={this.onEditSubmit}>
-                            <input placeholder="Post Name" ref={nameInput => this.nameInput = nameInput} defaultValue={name}/>
-                            <input placeholder="Author Name" ref={authorNameInput => this.authorNameInput = authorNameInput} defaultValue={author}/>
-                            <textarea placeholder="Content" ref={contentInput => this.contentInput = contentInput} defaultValue={content}/>
-                            <button>Save</button>
-                        </form>)
+                        (
+                            <div className="container">
+                                <form onSubmit={this.onEditSubmit}>
+                                    <input placeholder="Post Name" ref={nameInput => this.nameInput = nameInput} defaultValue={name}/>
+                                    <input placeholder="Author Name" ref={authorNameInput => this.authorNameInput = authorNameInput} defaultValue={author}/>
+                                    <textarea placeholder="Content" ref={contentInput => this.contentInput = contentInput} defaultValue={content}/>
+                                    <button>Save</button>
+                                </form>
+                            </div>
+                        )
                         : (
                             <div className="container">
                                 <div className="divider"/>

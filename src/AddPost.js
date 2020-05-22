@@ -16,6 +16,7 @@ class  AddPost  extends Component{
        this.props.onAdd(this.nameInput.value, this.authorNameInput.value, this.contentInput.value);
 
        this.nameInput.value = '';
+       this.authorNameInput.value = '';
        this.contentInput.value = '';
     }
 
@@ -26,7 +27,7 @@ class  AddPost  extends Component{
                 <h5>Add new post</h5>
 
                     <input type="text" id="postName" placeholder="Post Name" ref={nameInput => this.nameInput = nameInput}/>
-                    <input type="text" id="postName" placeholder="Auther Name" ref={authorNameInput => this.authorNameInput = authorNameInput}/>
+                    <input type="text" id="postName" placeholder="Author Name" ref={authorNameInput => this.authorNameInput = authorNameInput}/>
                     <textarea placeholder="Content" ref={contentInput => this.contentInput = contentInput}/>
                     <button type="submit" >Add</button>
 
